@@ -1,0 +1,68 @@
+1.To mke cin/cout as printf/scanf:
+ios_base::sync_with_stdio(0);
+Read somewhere else: Does same job as above:
+ // add the two lines below
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+2.//Replaces use of memset
+a[101]={0}
+3. Fast I/O method
+  
+    void scan(int &x){
+     char c = getchar_unlocked();
+     x = 0;
+     for(;(c<'0' || c>'9');c = getchar_unlocked());
+     for(;c>='0' && c<='9';c = getchar_unlocked()){
+       x = (x<<1) + (x<<3) + c - 48;
+     }
+    int main(){
+        int t;
+        scan(t);
+        while(t--){
+            int m,n;
+            scan(n);
+            scan(m);
+            //rest prog
+        }
+    } 
+4. If number of digits is large(eg-codechef AMIFIB)
+		cin>>s;// s is char array
+		int len = strlen(s);
+		for (i = 0; i <	len; i++){
+			char q = s[i];
+			unsigned long long a = q - '0';
+			n = n * ten + a;
+		}
+
+
+
+5. Bitwise shift concept:
+
+x<<y == x*2^y
+x>>y == x/2^y (integer division)
+
+For example, 3 in binary is 11b 3>>1==1 because 3/2==1, and 1==1b.
+Another example:
+21==10101b
+21>>2==5
+10101b>>10b==101b
+
+21==10101b
+21<<2==84
+10101b<<10b==1010100b
+
+
+6. To convert vector to string:
+
+Suppose you have a vector of strings, to convert it to a set you can:
+
+std::vector<std::string> v;
+
+std::set<std::string> s(v.begin(), v.end());
+
+For other types, you must have operator< defined.
+
+7.
+for finding power of 2
+
+(n & (n - 1)) == 0 is best. However, note that it will incorrectly return true for n=0, so if that is possible, you will want to check for it explicitly.
