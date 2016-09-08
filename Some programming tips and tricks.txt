@@ -11,7 +11,7 @@ a[101]={0}
     void scan(int &x){
      char c = getchar_unlocked();
      x = 0;
-     for(;(c<'0' || c>'9');c = getchar_unlocked())
+     for(;(c<'0' || c>'9');c = getchar_unlocked());
      for(;c>='0' && c<='9';c = getchar_unlocked()){
        x = (x<<1) + (x<<3) + c - 48;
      }
